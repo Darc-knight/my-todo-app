@@ -1,0 +1,29 @@
+name: my first ci pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+
+
+jobs:
+  first-job:
+    name: my first GitHub action job
+    runs-on: ubuntu-latest
+
+
+    steps:
+      - name: display repo message
+        run: echo "this is my first display message on GutHub actions"
+
+      - name: display current directory
+        run: pwd
+
+      - name: dsiplay files
+        run: ls -la
+
+      - name: check docker version
+        run: docker --version
